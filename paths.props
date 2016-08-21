@@ -4,18 +4,16 @@
   
   <PropertyGroup Label="UserMacros">
     <BoostPath>e:\libs\boost</BoostPath>
-	<ZlibPath>e:\libs\zlib-1.2.3</ZlibPath>
-	<TestNotepadPlusPlusUnicode>E:\NotepadTest\unicodeAppDataPlugins</TestNotepadPlusPlusUnicode>
+	<ZlibPath>$(SolutionDir)\submodule\zlib</ZlibPath>
+	<TestNotepadPlusPlusUnicode>c:\projects\nppPluginManager\unicodeAppDataPlugins</TestNotepadPlusPlusUnicode>
 	<TestNotepadPlusPlusAnsi>e:\NotepadTest\ansi</TestNotepadPlusPlusAnsi>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'ANSI-Debug' Or '$(Configuration)' == 'Debug-xml-test' Or '$(Configuration)' == 'ANSI-Debug-xml-test'">
     <IncludePath>$(BoostPath);$(ZlibPath);$(IncludePath)</IncludePath>
-    <LibraryPath>$(ZlibPath)\projects\visualc6\Win32_LIB_Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'ANSI-Release'">
     <IncludePath>$(BoostPath);$(ZlibPath);$(IncludePath)</IncludePath>
-    <LibraryPath>$(ZlibPath)\projects\visualc6\Win32_LIB_Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   
   <ItemDefinitionGroup />

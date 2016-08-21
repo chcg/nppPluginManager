@@ -7,15 +7,16 @@ clone_depth: 1
 
 environment:
   matrix:
-  - PlatformToolset: v140
+  #- PlatformToolset: v140
   - PlatformToolset: v120
+  - PlatformToolset: v110
 
 platform:
     - x64
     - Win32
 
 configuration:
-    - Release
+    #- Release
     - Debug
 
 install:
@@ -30,6 +31,7 @@ build:
 
 build_script:
     - cd c:\projects\nppPluginManager\
+    - mkdir unicodeAppDataPlugins
     - msbuild PluginManager.sln /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:

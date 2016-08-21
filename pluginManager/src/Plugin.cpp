@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "tinyxml/tinyxml.h"
 
 using namespace std;
-using namespace boost;
+using namespace boostOrStd;
 
 
 Plugin::Plugin(void)
@@ -281,12 +281,12 @@ void Plugin::addBadVersion(const PluginVersion &version, const TCHAR* report)
 }
 
 
-void Plugin::addInstallStep(boost::shared_ptr<InstallStep> step)
+void Plugin::addInstallStep(boostOrStd::shared_ptr<InstallStep> step)
 {
 	_installSteps.push_back(step);
 }
 
-void Plugin::addRemoveStep(boost::shared_ptr<InstallStep> step)
+void Plugin::addRemoveStep(boostOrStd::shared_ptr<InstallStep> step)
 {
 	_removeSteps.push_back(step);
 }
@@ -306,9 +306,9 @@ size_t Plugin::getRemoveStepCount()
 
 
 InstallStatus Plugin::install(tstring& basePath, TiXmlElement* forGpup, 
-									  boost::function<void(const TCHAR*)> setStatus,
-									  boost::function<void(const int)> stepProgress,
-									  boost::function<void()> stepComplete,
+									  boostOrStd::function<void(const TCHAR*)> setStatus,
+									  boostOrStd::function<void(const int)> stepProgress,
+									  boostOrStd::function<void()> stepComplete,
 									  const ModuleInfo* moduleInfo,
 									  VariableHandler* variableHandler,
                                       CancelToken& cancelToken)
@@ -320,9 +320,9 @@ InstallStatus Plugin::install(tstring& basePath, TiXmlElement* forGpup,
 
 
 InstallStatus Plugin::remove(tstring& basePath, TiXmlElement* forGpup, 
-									  boost::function<void(const TCHAR*)> setStatus,
-									  boost::function<void(const int)> stepProgress,
-									  boost::function<void()> stepComplete,
+									  boostOrStd::function<void(const TCHAR*)> setStatus,
+									  boostOrStd::function<void(const int)> stepProgress,
+									  boostOrStd::function<void()> stepComplete,
 									  const ModuleInfo* moduleInfo,
 									  VariableHandler* variableHandler,
                                       CancelToken& cancelToken)
@@ -362,9 +362,9 @@ InstallStatus Plugin::remove(tstring& basePath, TiXmlElement* forGpup,
 
 
 InstallStatus Plugin::runSteps(InstallStepContainer steps, tstring& basePath, TiXmlElement* forGpup, 
-									  boost::function<void(const TCHAR*)> setStatus,
-									  boost::function<void(const int)> stepProgress,
-									  boost::function<void()> stepComplete,
+									  boostOrStd::function<void(const TCHAR*)> setStatus,
+									  boostOrStd::function<void(const int)> stepProgress,
+									  boostOrStd::function<void()> stepComplete,
 									  const ModuleInfo* moduleInfo,
 									  VariableHandler* variableHandler,
                                       CancelToken& cancelToken)

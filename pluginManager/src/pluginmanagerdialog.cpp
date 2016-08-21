@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "WcharMbcsConverter.h"
 
 using namespace std;
-using namespace boost;
+using namespace boostOrStd;
 
 
 PluginManagerDialog::PluginManagerDialog()
@@ -129,7 +129,7 @@ BOOL CALLBACK PluginManagerDialog::availableTabDlgProc(HWND hWnd, UINT Message, 
                     CancelToken cancelToken;
 					ProgressDialog progress(dlg->_hInst, 
                         cancelToken,
-						boost::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_availableListView, FALSE, cancelToken));
+						boostOrStd::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_availableListView, FALSE, cancelToken));
 					progress.doModal(dlg->_hSelf);
 					
 					break;
@@ -229,7 +229,7 @@ BOOL CALLBACK PluginManagerDialog::updatesTabDlgProc(HWND hWnd, UINT Message, WP
                     CancelToken cancelToken;
 					ProgressDialog progress(dlg->_hInst, 
                         cancelToken,
-						boost::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_updatesListView, TRUE, cancelToken));
+						boostOrStd::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_updatesListView, TRUE, cancelToken));
 					progress.doModal(dlg->_hSelf);
 					
 					
@@ -329,7 +329,7 @@ BOOL CALLBACK PluginManagerDialog::installedTabDlgProc(HWND hWnd, UINT Message, 
                     CancelToken cancelToken;
 					ProgressDialog progress(dlg->_hInst, 
                         cancelToken,
-						boost::bind(&PluginList::startRemove, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_installedListView, cancelToken));
+						boostOrStd::bind(&PluginList::startRemove, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_installedListView, cancelToken));
 					progress.doModal(dlg->_hSelf);
 					break;
 				}
@@ -339,7 +339,7 @@ BOOL CALLBACK PluginManagerDialog::installedTabDlgProc(HWND hWnd, UINT Message, 
                     CancelToken cancelToken;
 					ProgressDialog progress(dlg->_hInst, 
                         cancelToken,
-						boost::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_installedListView, TRUE, cancelToken));
+						boostOrStd::bind(&PluginList::startInstall, dlg->_pluginList, dlg->_hSelf, _1, &dlg->_installedListView, TRUE, cancelToken));
 					progress.doModal(dlg->_hSelf);
 					break;
 				}

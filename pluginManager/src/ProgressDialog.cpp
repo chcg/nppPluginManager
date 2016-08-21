@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "libinstall/CancelToken.h"
 
 
-using namespace boost;
+using namespace boostOrStd;
 
 ProgressDialog::ProgressDialog(HINSTANCE hInst, CancelToken cancelToken, function<void(ProgressDialog*)> startFunction)
     : _hInst(hInst),

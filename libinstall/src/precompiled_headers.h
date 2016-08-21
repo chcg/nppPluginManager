@@ -25,6 +25,7 @@
 #include <strsafe.h>
 typedef std::basic_string<TCHAR>			tstring;
 
+#if USE_BOOST
 
 
 #pragma warning (push)
@@ -34,6 +35,13 @@ typedef std::basic_string<TCHAR>			tstring;
 
 #include <boost/function.hpp>
 #include <boost/shared_ptr.hpp>
+namespace boostOrStd = boost;
+#else
+
+#include <functional>   // std::bind and std::function
+//#include <memory> //std::shared_ptr already included above
+namespace boostOrStd = std;
+#endif
 
 #include <sstream>
 

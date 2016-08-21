@@ -36,8 +36,8 @@ DeleteStep::DeleteStep(const TCHAR *file, BOOL isDirectory)
 
 
 StepStatus DeleteStep::perform(tstring& /*basePath*/, TiXmlElement* forGpup, 
-							 boost::function<void(const TCHAR*)> setStatus,
-							 boost::function<void(const int)> stepProgress, 
+							 boostOrStd::function<void(const TCHAR*)> setStatus,
+							 boostOrStd::function<void(const int)> stepProgress, 
 							 const ModuleInfo* /*moduleInfo*/,
                              CancelToken& /*cancelToken*/)
 {

@@ -309,10 +309,10 @@ Plugin* PluginListView::getCurrentPlugin()
 }
 
 
-boost::shared_ptr< list<Plugin*> > PluginListView::getSelectedPlugins()
+boostOrStd::shared_ptr< list<Plugin*> > PluginListView::getSelectedPlugins()
 {
 	
-	boost::shared_ptr< list<Plugin*> > selectedList;
+	boostOrStd::shared_ptr< list<Plugin*> > selectedList;
 	
 	if (_listMode == LISTMODE_MESSAGE)
 		return selectedList;

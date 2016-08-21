@@ -20,8 +20,8 @@ DownloadStep::DownloadStep(const TCHAR *url, const TCHAR *filename)
 }
 
 StepStatus DownloadStep::perform(tstring &basePath, TiXmlElement* forGpup, 
-                                 boost::function<void(const TCHAR*)> setStatus,
-                                 boost::function<void(const int)> stepProgress, 
+                                 boostOrStd::function<void(const TCHAR*)> setStatus,
+                                 boostOrStd::function<void(const int)> stepProgress, 
                                  const ModuleInfo* moduleInfo,
                                  CancelToken &cancelToken)
 {
@@ -65,7 +65,7 @@ StepStatus DownloadStep::perform(tstring &basePath, TiXmlElement* forGpup,
         if (contentType == _T("text/html"))
         {
             DirectLinkSearch linkSearch(downloadFilename.c_str());
-            boost::shared_ptr<TCHAR> realLink;
+            boostOrStd::shared_ptr<TCHAR> realLink;
             if (!_filename.empty())
             {
                 realLink = linkSearch.search(_filename.c_str());

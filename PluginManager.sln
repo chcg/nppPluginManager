@@ -18,6 +18,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TinyXml", "TinyXml\projects\2010\TinyXml.vcxproj", "{C83E2A6F-9747-4855-9D61-A88359450ED6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unzip", "unzip\projects\2010\unzip.vcxproj", "{E3DCABE9-3953-4A81-8B71-DEF9AD21753B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{745DEC58-EBB3-47A9-A9B8-4C6627C01BF8} = {745DEC58-EBB3-47A9-A9B8-4C6627C01BF8}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NppPlugin", "NppPlugin\projects\2010\NppPlugin.vcxproj", "{69CC76EB-0183-4622-929C-02E860A66A23}"
 EndProject

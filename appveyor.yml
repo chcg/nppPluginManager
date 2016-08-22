@@ -9,7 +9,7 @@ environment:
   matrix:
   #- PlatformToolset: v140
   - PlatformToolset: v120
-  - PlatformToolset: v110
+  # doesn't build c++11 missing, would require boost build cfg - PlatformToolset: v110
 
 platform:
     - x64

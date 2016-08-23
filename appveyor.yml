@@ -7,7 +7,7 @@ clone_depth: 1
 
 environment:
   matrix:
-  #- PlatformToolset: v140
+  - PlatformToolset: v140
   - PlatformToolset: v120
   # doesn't build c++11 missing, would require boost build cfg - PlatformToolset: v110
 
@@ -16,7 +16,7 @@ platform:
     - Win32
 
 configuration:
-    #- Release
+    - Release
     - Debug
 
 install:
@@ -32,7 +32,7 @@ build:
 build_script:
     - cd c:\projects\nppPluginManager\
     - mkdir unicodeAppDataPlugins
-    - msbuild PluginManager.sln /m /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
+    - msbuild PluginManager.sln /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:
     - cd c:\projects\nppPluginManager\

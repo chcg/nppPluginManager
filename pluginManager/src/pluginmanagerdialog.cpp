@@ -56,7 +56,7 @@ void PluginManagerDialog::doDialog()
 	goToCenter();
 }
 
-BOOL CALLBACK PluginManagerDialog::availableTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PluginManagerDialog::availableTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	switch (Message) 
 	{
@@ -151,7 +151,7 @@ BOOL CALLBACK PluginManagerDialog::availableTabDlgProc(HWND hWnd, UINT Message, 
 
 
 
-BOOL CALLBACK PluginManagerDialog::updatesTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PluginManagerDialog::updatesTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	switch (Message) 
 	{
@@ -243,7 +243,7 @@ BOOL CALLBACK PluginManagerDialog::updatesTabDlgProc(HWND hWnd, UINT Message, WP
 }
 
 
-BOOL CALLBACK PluginManagerDialog::installedTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PluginManagerDialog::installedTabDlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	switch (Message) 
 	{
@@ -356,7 +356,7 @@ BOOL CALLBACK PluginManagerDialog::installedTabDlgProc(HWND hWnd, UINT Message, 
 }
 
  
-BOOL CALLBACK PluginManagerDialog::tabWndProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PluginManagerDialog::tabWndProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	switch (Message) 
 	{
@@ -399,7 +399,7 @@ BOOL CALLBACK PluginManagerDialog::tabWndProc(HWND hWnd, UINT Message, WPARAM wP
 
 }
 
-BOOL CALLBACK PluginManagerDialog::run_dlgProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PluginManagerDialog::run_dlgProc(UINT Message, WPARAM wParam, LPARAM lParam)
 {
 	switch (Message) 
 	{
@@ -412,13 +412,13 @@ BOOL CALLBACK PluginManagerDialog::run_dlgProc(HWND hWnd, UINT Message, WPARAM w
 			
 			WINDOWINFO wiDlg;
 			wiDlg.cbSize = sizeof(WINDOWINFO);
-			::GetWindowInfo(hWnd, &wiDlg);
+			::GetWindowInfo(_hSelf, &wiDlg);
 			_leftMargin = wiCtl.rcClient.left - wiDlg.rcClient.left;
 			_rightMargin = wiDlg.rcClient.right - wiCtl.rcClient.right;
 			_topMargin = wiCtl.rcClient.top - wiDlg.rcClient.top;
 			_tabBottomOffset = wiDlg.rcClient.bottom - wiCtl.rcClient.bottom;
-			_hCloseButton = GetDlgItem(hWnd, IDOK);
-			_hSettingsButton = GetDlgItem(hWnd, IDC_SETTINGS);
+			_hCloseButton = GetDlgItem(_hSelf, IDOK);
+			_hSettingsButton = GetDlgItem(_hSelf, IDC_SETTINGS);
 			::GetWindowInfo(_hCloseButton, &wiCtl);
 			_closeButtonRightOffset = wiDlg.rcClient.right - wiCtl.rcClient.left;
 			_closeButtonBottomOffset = wiDlg.rcClient.bottom - wiCtl.rcClient.top;

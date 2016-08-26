@@ -8,6 +8,7 @@ clone_depth: 1
 environment:
   matrix:
   - PlatformToolset: v140
+  - PlatformToolset: v140_xp
   - PlatformToolset: v120
   # doesn't build c++11 missing, would require boost build cfg - PlatformToolset: v110
 
@@ -31,7 +32,8 @@ build:
 
 build_script:
     - cd c:\projects\nppPluginManager\
-    - mkdir unicodeAppDataPlugins
+    - mkdir unicodeAppDataPlugins\plugins
+    - mkdir unicodeAppDataPlugins\updater
     - msbuild PluginManager.sln /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:

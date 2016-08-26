@@ -73,10 +73,10 @@ after_build:
         }
 
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Release") {
-            Push-AppveyorArtifact "bin\Release\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            Push-AppveyorArtifact "pluginManager\bin\Release\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "bin\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            Push-AppveyorArtifact "pluginManager\bin\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 

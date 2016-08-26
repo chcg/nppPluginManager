@@ -8,8 +8,8 @@ clone_depth: 1
 environment:
   matrix:
   - PlatformToolset: v140
-  - PlatformToolset: v140_xp
-  - PlatformToolset: v120
+  #- PlatformToolset: v140_xp
+  #- PlatformToolset: v120
   # doesn't build c++11 missing, would require boost build cfg - PlatformToolset: v110
 
 platform:
@@ -17,7 +17,7 @@ platform:
     - Win32
 
 configuration:
-    - Release
+    #- Release
     - Debug
 
 install:
@@ -48,7 +48,7 @@ before_build:
     cd c:\projects\nppPluginManager\submodule\googletest
     md _build -Force | Out-Null
     cd _build
-    & cmake -G "$generator" ..
+    & cmake -G "$generator" -DBUILD_GTEST=ON -DBUILD_GMOCK=OFF ..
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
     }

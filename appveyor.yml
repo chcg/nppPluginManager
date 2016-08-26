@@ -57,7 +57,7 @@ build_script:
     - cd c:\projects\nppPluginManager\
     - mkdir unicodeAppDataPlugins\plugins
     - mkdir unicodeAppDataPlugins\updater
-    - msbuild PluginManager.sln /m /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
+    - msbuild PluginManager.sln /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:
     - cd c:\projects\nppPluginManager\

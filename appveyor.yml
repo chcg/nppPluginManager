@@ -8,7 +8,7 @@ clone_depth: 1
 environment:
   matrix:
   - PlatformToolset: v140
-  #- PlatformToolset: v140_xp
+  - PlatformToolset: v140_xp
   #- PlatformToolset: v120
   # doesn't build c++11 missing, would require boost build cfg - PlatformToolset: v110
 
@@ -69,7 +69,7 @@ after_build:
         }
 
         if ($env:PLATFORM -eq "x64" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "pluginManager\bin\x64\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            #Push-AppveyorArtifact "pluginManager\bin\x64\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Release") {
@@ -77,6 +77,6 @@ after_build:
         }
 
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "pluginManager\bin\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            #Push-AppveyorArtifact "pluginManager\bin\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 

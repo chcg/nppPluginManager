@@ -252,7 +252,7 @@
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\libinstall\include;..\..\src;..\..\..\tinyxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -319,7 +319,7 @@ copy "$(TargetPath)" "$(TestNotepadPlusPlusUnicode)\updater"</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>comctl32.lib;shlwapi.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Configuration)\TinyXml.lib;..\..\..\unzip\bin\$(Configuration)\unzip.lib;$(ZlibPath)\..\x86\ZlibStatRelease\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>comctl32.lib;shlwapi.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Configuration)\TinyXml.lib;..\..\..\unzip\bin\$(Configuration)\unzip.lib;$(ZlibPath)\..\x86\ZlibStatReleaseWithoutAsm\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -339,7 +339,7 @@ copy "$(TargetPath)" "$(TestNotepadPlusPlusUnicode)\updater"</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>comctl32.lib;shlwapi.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Platform)\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Platform)\$(Configuration)\TinyXml.lib;..\..\..\unzip\bin\$(Platform)\$(Configuration)\unzip.lib;$(ZlibPath)\..\x64\ZlibStatRelease\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>comctl32.lib;shlwapi.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Platform)\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Platform)\$(Configuration)\TinyXml.lib;..\..\..\unzip\bin\$(Platform)\$(Configuration)\unzip.lib;$(ZlibPath)\..\x64\ZlibStatReleaseWithoutAsm\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -351,7 +351,7 @@ copy "$(TargetPath)" "$(TestNotepadPlusPlusUnicode)\updater"</Command>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\libinstall\include;..\..\src;..\..\..\tinyxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
@@ -444,7 +444,7 @@ copy "$(TargetPath)" "$(TestNotepadPlusPlusAnsi)\updater"</Command>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\libinstall\include;..\..\src;..\..\..\tinyxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>
@@ -492,7 +492,7 @@ copy "$(TargetPath)" "$(TestNotepadPlusPlusUnicode)\updater"</Command>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\libinstall\include;..\..\src;..\..\..\tinyxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader>

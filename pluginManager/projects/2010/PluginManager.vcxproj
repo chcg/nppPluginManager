@@ -387,7 +387,7 @@ copy "$(TargetDir)\*.pdb" "$(TestNotepadPlusPlusUnicode)\plugins"</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>version.lib;shlwapi.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Configuration)\TinyXml.lib;..\..\..\NppPlugin\bin\$(Configuration)\NppPlugin.lib;..\..\..\unzip\bin\$(Configuration)\unzip.lib;$(ZlibPath)\..\x86\ZlibStat$(Configuration)\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>version.lib;shlwapi.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Configuration)\TinyXml.lib;..\..\..\NppPlugin\bin\$(Configuration)\NppPlugin.lib;..\..\..\unzip\bin\$(Configuration)\unzip.lib;$(ZlibPath)\..\x86\ZlibStat$(Configuration)WithoutAsm\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -412,7 +412,7 @@ copy "$(TargetDir)\*.pdb" "$(TestNotepadPlusPlusUnicode)\plugins"</Command>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>version.lib;shlwapi.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Platform)\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Platform)\$(Configuration)\TinyXml.lib;..\..\..\NppPlugin\bin\$(Platform)\$(Configuration)\NppPlugin.lib;..\..\..\unzip\bin\$(Platform)\$(Configuration)\unzip.lib;$(ZlibPath)\..\$(Platform)\ZlibStat$(Configuration)\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>version.lib;shlwapi.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;..\..\..\libinstall\bin\$(Platform)\$(Configuration)\libinstall.lib;..\..\..\TinyXml\bin\$(Platform)\$(Configuration)\TinyXml.lib;..\..\..\NppPlugin\bin\$(Platform)\$(Configuration)\NppPlugin.lib;..\..\..\unzip\bin\$(Platform)\$(Configuration)\unzip.lib;$(ZlibPath)\..\$(Platform)\ZlibStat$(Configuration)WithoutAsm\zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

@@ -17,7 +17,7 @@ platform:
     - Win32
 
 configuration:
-    #- Release
+    - Release
     - Debug
 
 install:
@@ -57,7 +57,7 @@ build_script:
     - cd c:\projects\nppPluginManager\
     - mkdir unicodeAppDataPlugins\plugins
     - mkdir unicodeAppDataPlugins\updater
-    - msbuild PluginManager.sln /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
+    - msbuild PluginManager.sln /m /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:
     - cd c:\projects\nppPluginManager\
@@ -65,11 +65,11 @@ after_build:
         $nppPluginManagerFileName = "PluginManager.$env:PLATFORM.$env:CONFIGURATION.$env:PLATFORMTOOLSET.dll"
 
         if ($env:PLATFORM -eq "x64" -and $env:CONFIGURATION -eq "Release") {
-            Push-AppveyorArtifact "x64\Release\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            Push-AppveyorArtifact ""pluginManager\bin\x64\Release\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 
         if ($env:PLATFORM -eq "x64" -and $env:CONFIGURATION -eq "Debug") {
-            Push-AppveyorArtifact "x64\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
+            Push-AppveyorArtifact ""pluginManager\bin\x64\Debug\PluginManager.dll" -FileName "$nppPluginManagerFileName"
         }
 
         if ($env:PLATFORM -eq "Win32" -and $env:CONFIGURATION -eq "Release") {

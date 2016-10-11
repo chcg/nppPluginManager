@@ -45,7 +45,7 @@ before_build:
         $generator = "$generator Win64"
     }
     
-    cd c:\projects\nppPluginManager\submodule\googletest
+    cd "%APPVEYOR_BUILD_FOLDER%"\submodule\googletest
     md _build -Force | Out-Null
     cd _build
     & cmake -G "$generator" -DBUILD_GTEST=ON -DBUILD_GMOCK=OFF ..
@@ -54,13 +54,13 @@ before_build:
     }
 
 build_script:
-    - cd c:\projects\nppPluginManager\
+    - cd "%APPVEYOR_BUILD_FOLDER%"
     - mkdir unicodeAppDataPlugins\plugins
     - mkdir unicodeAppDataPlugins\updater
     - msbuild PluginManager.sln /m /p:configuration="%configuration%" /p:platform="%platform%" /p:PlatformToolset="%PlatformToolset%"
 
 after_build:
-    - cd c:\projects\nppPluginManager\
+    - cd "%APPVEYOR_BUILD_FOLDER%"
     - ps: >-
         $nppPluginManagerFileName = "PluginManager.$env:PLATFORM.$env:CONFIGURATION.$env:PLATFORMTOOLSET.dll"
 

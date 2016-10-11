@@ -45,7 +45,7 @@ before_build:
         $generator = "$generator Win64"
     }
     
-    cd "$env:APPVEYOR_BUILD_FOLDER"\submodule\googletest
+    cd c:\projects\nppPluginManager\submodule\googletest
     md _build -Force | Out-Null
     cd _build
     & cmake -G "$generator" -DBUILD_GTEST=ON -DBUILD_GMOCK=OFF ..

@@ -45,7 +45,7 @@ before_build:
         $generator = "$generator Win64"
     }
     
-    cd "%APPVEYOR_BUILD_FOLDER%"\submodule\googletest
+    cd "$env:APPVEYOR_BUILD_FOLDER"\submodule\googletest
     md _build -Force | Out-Null
     cd _build
     & cmake -G "$generator" -DBUILD_GTEST=ON -DBUILD_GMOCK=OFF ..

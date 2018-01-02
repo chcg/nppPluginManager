@@ -37,7 +37,7 @@ void DownloadManager::disableCache() {
     m_disableCache = TRUE;
 }
 
-BOOL DownloadManager::getUrl(CONST TCHAR *url, tstring& filename, tstring& contentType, const ModuleInfo *moduleInfo)
+BOOL DownloadManager::getUrl(const TCHAR *url, tstring& filename, tstring& contentType, const ModuleInfo *moduleInfo)
 {
     InternetDownload download(moduleInfo->getHParent(), _userAgent, url, m_cancelToken, _progressFunction);
     if (m_disableCache) {
@@ -52,7 +52,7 @@ BOOL DownloadManager::getUrl(CONST TCHAR *url, tstring& filename, tstring& conte
 
 
 
-BOOL DownloadManager::getUrl(CONST TCHAR *url, string& result, const ModuleInfo *moduleInfo)
+BOOL DownloadManager::getUrl(const TCHAR *url, string& result, const ModuleInfo *moduleInfo)
 {
     InternetDownload download(moduleInfo->getHParent(), _userAgent, url, m_cancelToken, _progressFunction);
     if (m_disableCache) {

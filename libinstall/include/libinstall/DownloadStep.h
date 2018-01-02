@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class ModuleInfo;
 class CancelToken;
+class DownloadManager;
 
 class DownloadStep : public InstallStep
 {
@@ -35,6 +36,13 @@ public:
     	std::function<void(const int)> stepProgress, 
         const ModuleInfo *moduleInfo,
         CancelToken& cancelToken);
+
+	StepStatus downloadHelper(tstring &downloadURL, DownloadManager &downloadManager, tstring &downloadFilename,
+		tstring & basePath, TiXmlElement * forGpup, 
+		std::function<void(const TCHAR *)> &setStatus, 
+		std::function<void(int)> &stepProgress, 
+		const ModuleInfo * moduleInfo,
+		CancelToken & cancelToken);
 
 private:
 	tstring	_url;
